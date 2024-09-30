@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="/website/css/uicons-solid-rounded.css" rel="stylesheet">
+    <title>Aiello's Machine</title>
+</head>
+
+<script src="script.js"></script>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="titulo">
+                <h1>Aiello's Machine</h1>
+            </div>
+            <div class="nav-elements">
+                <a href="index.html">Conversões</a>
+                <span>|</span>
+                <a href="#">Operações</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container-operacoes">
+            <div class="operacoes">
+                <div class="box">
+                    <div class="titulo">
+                        <h3>Soma +</h3>
+                    </div>
+                    <div class="input-operacao">
+                        <input type="number" id="num_soma1" min=0 placeholder="Digite o 1° número" onkeyup="somar()">
+                        <input type="number" id="num_soma2" min=0 placeholder="Digite o 2° número" onkeyup="somar()">
+                    </div>
+                    <div class="bases">
+                        <select id="select_soma1" onchange="somar()">
+                            <option value=2>Binário</option>
+                            <option value=8>Octal</option>
+                            <option value=10>Decimal</option>
+                            <option value=16>Hexadecimal</option>
+                        </select>
+                        <select id="select_soma2" onchange="somar()">
+                            <option value=2>Binário</option>
+                            <option value=8>Octal</option>
+                            <option value=10>Decimal</option>
+                            <option value=16>Hexadecimal</option>
+                        </select>
+                    </div>
+                    <div class="resultado-equacao">
+                        <fieldset>
+                            <legend>Resultado</legend>
+                            <p id="resultado_soma"></p>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="titulo">
+                        <h3>Subtração -</h3>
+                    </div>
+                    <div class="input-operacao">
+                        <input type="number" id="num_subtracao1" min=0 placeholder="Digite o 1° número"
+                            onkeyup="subtrair()">
+                        <input type="number" id="num_subtracao2" min=0 placeholder="Digite o 2° número"
+                            onkeyup="subtrair()">
+                    </div>
+                    <div class="bases">
+                        <select id="select_subtracao1" onchange="subtrair()">
+                            <option value=2>Binário</option>
+                            <option value=8>Octal</option>
+                            <option value=10>Decimal</option>
+                            <option value=16>Hexadecimal</option>
+                        </select>
+                        <select id="select_subtracao2" onchange="subtrair()">
+                            <option value=2>Binário</option>
+                            <option value=8>Octal</option>
+                            <option value=10>Decimal</option>
+                            <option value=16>Hexadecimal</option>
+                        </select>
+                    </div>
+                    <div class="resultado-equacao">
+                        <fieldset>
+                            <legend>Resultado</legend>
+                            <p id="resultado_subtracao"></p>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="titulo">
+                        <h3>Multiplicação x</h3>
+                    </div>
+                    <div class="input-operacao">
+                        <input type="number" id="num_multiplicacao1" min=0 placeholder="Digite o 1° número"
+                            onkeyup="multiplicar()">
+                        <input type="number" id="num_multiplicacao2" min=0 placeholder="Digite o 2° número"
+                            onkeyup="multiplicar()">
+                    </div>
+                    <div class="bases">
+                        <select id="select_multiplicacao1" onchange="multiplicar()">
+                            <option value=2>Binário</option>
+                            <option value=8>Octal</option>
+                            <option value=10>Decimal</option>
+                            <option value=16>Hexadecimal</option>
+                        </select>
+                        <select id="select_multiplicacao2" onchange="multiplicar()">
+                            <option value=2>Binário</option>
+                            <option value=8>Octal</option>
+                            <option value=10>Decimal</option>
+                            <option value=16>Hexadecimal</option>
+                        </select>
+                    </div>
+                    <div class="resultado-equacao">
+                        <fieldset>
+                            <legend>Resultado</legend>
+                            <p id="resultado_multiplicacao"></p>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="titulo">
+                        <h3>Divisão ÷</h3>
+                    </div>
+                    <div class="input-operacao">
+                        <input type="number" id="num_divisao1" min=0 placeholder="Digite o 1° número"
+                            onkeyup="dividir()">
+                        <input type="number" id="num_divisao2" min=0 placeholder="Digite o 2° número"
+                            onkeyup="dividir()">
+                    </div>
+                    <div class="bases">
+                        <select id="select_divisao1" onchange="dividir()">
+                            <option value=2>Binário</option>
+                            <option value=8>Octal</option>
+                            <option value=10>Decimal</option>
+                            <option value=16>Hexadecimal</option>
+                        </select>
+                        <select id="select_divisao2" onchange="dividir()">
+                            <option value=2>Binário</option>
+                            <option value=8>Octal</option>
+                            <option value=10>Decimal</option>
+                            <option value=16>Hexadecimal</option>
+                        </select>
+                    </div>
+                    <div class="resultado-equacao">
+                        <fieldset>
+                            <legend>Resultado</legend>
+                            <p id="resultado_divisao"></p>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="infos">
+                <div class="box">
+                    <span>Made by Lucas Eduardo Aiello</span>
+                    <img src="assets/user.png" alt="">
+                </div>
+                <div class="box">
+                    <p>Email: <span>lucas.aiello@sptech.school</span></p>
+                    <img src="assets/envelope.png" alt="">
+                </div>
+                <div class="box">
+                    <p>Whatsapp: <span>(16) 997634968</span></p>
+                    <img src="assets/whatsapp.png" alt="">
+                </div>
+                <div class="box">
+                    <p>Cursando <span>Análise e Desenvolvimento de Sistemas na SPTech!</span></p>
+                    <img src="assets/e-learning.png" alt="">
+                </div>
+                <div class="box">
+                    <span>V.01</span>
+                    <img src="assets/globe.png" alt="">
+                </div>
+            </div>
+            <img src="assets/sptech.png" alt="">
+        </div>
+    </footer>
+
+</body>
+
+</html>

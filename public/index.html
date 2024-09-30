@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="/website/css/uicons-solid-rounded.css" rel="stylesheet">
+    <title>Aiello's Machine</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="titulo">
+                <h1>Aiello's Machine</h1>
+            </div>
+            <div class="nav-elements">
+                <a href="#">Conversões</a>
+                <span>|</span>
+                <a href="operacoes.html">Operações</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container-conversor">
+            <div class="conversoes">
+                <div class="box" id="menu_bin">
+                    <div class="titulo">
+                        <h3>Binário</h3>
+                    </div>
+                    <hr>
+                    <input type="number" id="num_bin" min=0 placeholder="Digite um número" onkeyup="converterBin()">
+                    <div class="resultado">
+                        <div class="box-resultado">
+                            <p>Octal: </p>
+                            <p id="resultado_octB"></p>
+                        </div>
+                        <div class="box-resultado">
+                            <p>Decimal: </p>
+                            <p id="resultado_decB"></p>
+                        </div>
+                        <div class="box-resultado">
+                            <p>Hexadecimal: </p>
+                            <p id="resultado_hexB"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" id="menu_oct">
+                    <div class="titulo">
+                        <h3>Octal</h3>
+                    </div>
+                    <hr>
+                    <input type="number" id="num_oct" min=0 placeholder="Digite um número" onkeyup="converterOct()">
+                    <div class="resultado">
+                        <div class="box-resultado">
+                            <p>Binário: </p>
+                            <p id="resultado_binO"></p>
+                        </div>
+                        <div class="box-resultado">
+                            <p>Decimal: </p>
+                            <p id="resultado_decO"></p>
+                        </div>
+                        <div class="box-resultado">
+                            <p>Hexadecimal: </p>
+                            <p id="resultado_hexO"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" id="menu_dec">
+                    <div class="titulo">
+                        <h3>Decimal</h3>
+                    </div>
+                    <hr>
+                    <input type="number" id="num_dec" min=0 placeholder="Digite um número" onkeyup="converterDec()">
+                    <div class="resultado">
+                        <div class="box-resultado">
+                            <p>Binário: </p>
+                            <p id="resultado_binD"></p>
+                        </div>
+                        <div class="box-resultado">
+                            <p>Octal: </p>
+                            <p id="resultado_octD"></p>
+                        </div>
+                        <div class="box-resultado">
+                            <p>Hexadecimal: </p>
+                            <p id="resultado_hexD"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" id="menu_hex">
+                    <div class="titulo">
+                        <h3>Hexadecimal</h3>
+                    </div>
+                    <hr>
+                    <input id="num_hex" placeholder="Digite um número" onkeyup="converterHex()">
+                    <div class="resultado">
+                        <div class="box-resultado">
+                            <p>Binário: </p>
+                            <p id="resultado_binH"></p>
+                        </div>
+                        <div class="box-resultado">
+                            <p>Octal: </p>
+                            <p id="resultado_octH"></p>
+                        </div>
+                        <div class="box-resultado">
+                            <p>Decimal: </p>
+                            <p id="resultado_decH"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="infos">
+                <div class="box">
+                    <span>Made by Lucas Eduardo Aiello</span>
+                    <img src="assets/user.png" alt="">
+                </div>
+                <div class="box">
+                    <p>Email: <span>lucas.aiello@sptech.school</span></p>
+                    <img src="assets/envelope.png" alt="">
+                </div>
+                <div class="box">
+                    <p>Whatsapp: <span>(16) 997634968</span></p>
+                    <img src="assets/whatsapp.png" alt="">
+                </div>
+                <div class="box">
+                    <p>Cursando <span>Análise e Desenvolvimento de Sistemas na SPTech!</span></p>
+                    <img src="assets/e-learning.png" alt="">
+                </div>
+                <div class="box">
+                    <span>V.01</span>
+                    <img src="assets/globe.png" alt="">
+                </div>
+            </div>
+            <img src="assets/sptech.png" alt="">
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+    function limpar(a) {
+        switch (a) {
+            case 'num_bin':
+                num_oct.value = ''
+                num_dec.value = ''
+                num_hex.value = ''
+                break;
+            case 'num_oct':
+                num_bin.value = ''
+                num_dec.value = ''
+                num_hex.value = ''
+                break;
+            case 'num_dec':
+                num_bin.value = ''
+                num_oct.value = ''
+                num_hex.value = ''
+                break;
+            default:
+                num_bin.value = ''
+                num_oct.value = ''
+                num_dec.value = ''
+        }
+
+        resultado_decB.innerText = ''
+        resultado_octB.innerText = ''
+        resultado_hexB.innerText = ''
+        resultado_binO.innerText = ''
+        resultado_decO.innerText = ''
+        resultado_hexO.innerText = ''
+        resultado_binD.innerText = ''
+        resultado_octD.innerText = ''
+        resultado_hexD.innerText = ''
+        resultado_binH.innerText = ''
+        resultado_octH.innerText = ''
+        resultado_decH.innerText = ''
+    }
+
+    function calcular(a, b, c, d, e, f, g, i) {
+        limpar(i)
+        const num = document.getElementById(i).value
+        const conversao = parseInt(num, a)
+        const primeiro = conversao.toString(b)
+        const segundo = conversao.toString(c)
+        const terceiro = conversao.toString(d)
+
+        e.innerText = primeiro
+        f.innerText = segundo
+        g.innerText = terceiro
+    }
+
+    function converterBin() {
+        const num = document.getElementById("num_bin").value
+
+        if ((/^[01]+$/.test(num)) == false && num != '') {
+            alert('ERRO, o número digitado não corresponde ao tipo solicitado!')
+        } else if (num != '') {
+
+            calcular(2, 8, 10, 16, resultado_octB, resultado_decB, resultado_hexB, 'num_bin')
+        }
+    }
+
+    function converterOct() {
+        const num = document.getElementById("num_oct").value
+
+        if ((/^[0-7]+$/.test(num)) == false && num != '') {
+            alert('ERRO, o número digitado não corresponde ao tipo solicitado!')
+        } else if (num != '') {
+
+            calcular(8, 2, 10, 16, resultado_binO, resultado_decO, resultado_hexO, 'num_oct')
+        }
+    }
+
+    function converterDec() {
+        const num = document.getElementById("num_dec").value
+
+        if ((/^[0-9]+$/.test(num)) == false && num != '') {
+            alert('ERRO, o número digitado não corresponde ao tipo solicitado!')
+        } else if (num != '') {
+
+            calcular(10, 2, 8, 16, resultado_binD, resultado_octD, resultado_hexD, 'num_dec')
+        }
+    }
+
+    function converterHex() {
+        const num = document.getElementById("num_hex").value
+
+        if ((/^[0-9a-fA-F]+$/.test(num)) == false && num != '') {
+            alert('ERRO, o número digitado não corresponde ao tipo solicitado!')
+        } else if (num != '') {
+
+            calcular(16, 2, 8, 10, resultado_binH, resultado_octH, resultado_decH, 'num_hex')
+        }
+    }
+
+</script>
